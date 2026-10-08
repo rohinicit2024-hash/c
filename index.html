@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Processing System - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body" data-page="login">
+
+  <main class="auth-card" id="authCard">
+    <span class="brand-mark">CC</span>
+    <h1>Credit Card Processing System</h1>
+
+    <!-- ========== LOGIN ========== -->
+    <section id="panel-login">
+      <p class="subtitle">Log in to view your card and make payments.</p>
+
+      <div id="loginMsg" class="alert hidden" role="alert"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-block">Login</button>
+      </form>
+
+      <div class="link-row">
+        <button type="button" class="link-btn" data-show="panel-forgot-username">Forgot Username</button>
+        <button type="button" class="link-btn" data-show="panel-forgot-password">Forgot Password</button>
+      </div>
+
+      <p class="center small">New customer?
+        <button type="button" class="link-btn" data-show="panel-register">Create an account</button>
+      </p>
+      <hr>
+      <p class="center small"><a href="admin-login.html">Administrator login</a></p>
+    </section>
+
+    <!-- ========== REGISTER ========== -->
+    <section id="panel-register" class="hidden">
+      <h2 class="center">Create your account</h2>
+      <p class="subtitle">Register yourself and the card you want to use.</p>
+
+      <div id="registerMsg" class="alert hidden" role="alert"></div>
+
+      <form id="registerForm" novalidate>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="regFullName">Full name</label>
+            <input type="text" id="regFullName" autocomplete="name" required>
+          </div>
+          <div class="field full">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="regUsername">Username</label>
+            <input type="text" id="regUsername" autocomplete="username" required>
+            <div class="hint">4-20 letters, numbers or _</div>
+          </div>
+          <div class="field">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" autocomplete="new-password" required>
+            <div class="hint">At least 6 characters</div>
+          </div>
+          <div class="field full">
+            <label for="regConfirm">Confirm password</label>
+            <input type="password" id="regConfirm" autocomplete="new-password" required>
+          </div>
+          <div class="field full">
+            <label for="regQuestion">Security question (used if you forget your password)</label>
+            <select id="regQuestion">
+              <option>What is your favourite food?</option>
+              <option>What was your first school's name?</option>
+              <option>What is your pet's name?</option>
+              <option>In which city were you born?</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="regAnswer">Security answer</label>
+            <input type="text" id="regAnswer" autocomplete="off" required>
+          </div>
+          <div class="field">
+            <label for="regCardNumber">Card number</label>
+            <input type="text" id="regCardNumber" inputmode="numeric" maxlength="19" autocomplete="off" placeholder="1234 5678 9012 3456" required>
+          </div>
+          <div class="field">
+            <label for="regExpiry">Expiry (MM/YY)</label>
+            <input type="text" id="regExpiry" inputmode="numeric" maxlength="5" autocomplete="off" placeholder="MM/YY" required>
+          </div>
+          <div class="full hint" style="margin-bottom:14px">
+            For testing, use any valid test card number (for example 4111 1111 1111 1111 for Visa
+            or 5555 5555 5555 4444 for Mastercard) with a future expiry date.
+            Only the card type, last 4 digits and expiry date are saved.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-block">Create account</button>
+      </form>
+      <p class="center small" style="margin-top:14px">
+        <button type="button" class="link-btn" data-show="panel-login">Back to login</button>
+      </p>
+    </section>
+
+    <!-- ========== FORGOT USERNAME ========== -->
+    <section id="panel-forgot-username" class="hidden">
+      <h2 class="center">Forgot username</h2>
+      <p class="subtitle">Enter the email address you registered with.</p>
+
+      <div id="forgotUserMsg" class="alert hidden" role="alert"></div>
+
+      <form id="forgotUserForm" novalidate>
+        <div class="field">
+          <label for="fuEmail">Registered email</label>
+          <input type="email" id="fuEmail" autocomplete="email" required>
+        </div>
+        <button type="submit" class="btn btn-block">Find my username</button>
+      </form>
+      <p class="center small" style="margin-top:14px">
+        <button type="button" class="link-btn" data-show="panel-login">Back to login</button>
+      </p>
+    </section>
+
+    <!-- ========== FORGOT PASSWORD ========== -->
+    <section id="panel-forgot-password" class="hidden">
+      <h2 class="center">Forgot password</h2>
+      <p class="subtitle">Answer your security question to set a new password.</p>
+
+      <div id="forgotPassMsg" class="alert hidden" role="alert"></div>
+
+      <!-- Step 1: find the account -->
+      <form id="forgotPassForm1" novalidate>
+        <div class="field">
+          <label for="fpUsername">Username</label>
+          <input type="text" id="fpUsername" autocomplete="username" required>
+        </div>
+        <button type="submit" class="btn btn-block">Continue</button>
+      </form>
+
+      <!-- Step 2: answer the question and choose a new password -->
+      <form id="forgotPassForm2" class="hidden" novalidate>
+        <div class="field">
+          <label for="fpAnswer" id="fpQuestion">Security question</label>
+          <input type="text" id="fpAnswer" autocomplete="off" required>
+        </div>
+        <div class="field">
+          <label for="fpNew">New password</label>
+          <input type="password" id="fpNew" autocomplete="new-password" required>
+        </div>
+        <div class="field">
+          <label for="fpConfirm">Confirm new password</label>
+          <input type="password" id="fpConfirm" autocomplete="new-password" required>
+        </div>
+        <button type="submit" class="btn btn-block">Save new password</button>
+      </form>
+
+      <p class="center small" style="margin-top:14px">
+        <button type="button" class="link-btn" data-show="panel-login">Back to login</button>
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

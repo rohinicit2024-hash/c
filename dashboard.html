@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard - Credit Card Processing System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="guarded" data-page="dashboard">
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">CC</span> Credit Card Processing System</div>
+    <div class="topbar-right">
+      <span class="topbar-user">Signed in as <strong class="js-customer-name"></strong></span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Welcome, <span class="js-customer-name"></span></h1>
+        <p>Here is a quick look at your card.</p>
+      </div>
+    </div>
+
+    <div id="cardWarning" class="alert alert-error hidden">
+      Your card is currently Deactive, so payments are blocked. Please contact the administrator.
+    </div>
+
+    <!-- Available credit -->
+    <section class="grid grid-2">
+      <div class="stat hero">
+        <div class="label">Available Credit</div>
+        <div class="value" id="availableCredit">-</div>
+        <div class="sub">Credit limit: <span id="creditLimit">-</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Credit used</div>
+        <div class="value" id="usedPercent">0%</div>
+        <div class="meter" role="progressbar" aria-label="Credit used" aria-valuemin="0" aria-valuemax="100" id="meter">
+          <div class="meter-fill" id="meterFill"></div>
+        </div>
+        <div class="meter-note"><span id="usedAmount">-</span> of your limit has been spent</div>
+      </div>
+    </section>
+
+    <!-- Spending summary -->
+    <h2 class="section-title">Spending Summary</h2>
+    <section class="grid grid-4">
+      <div class="stat">
+        <div class="label">Total spent</div>
+        <div class="value" id="totalSpent">-</div>
+      </div>
+      <div class="stat">
+        <div class="label">Spent this month</div>
+        <div class="value" id="monthSpent">-</div>
+      </div>
+      <div class="stat">
+        <div class="label">Payments made</div>
+        <div class="value" id="paymentCount">0</div>
+      </div>
+      <div class="stat">
+        <div class="label">Largest payment</div>
+        <div class="value" id="largestPayment">-</div>
+      </div>
+    </section>
+
+    <!-- Navigation buttons -->
+    <h2 class="section-title">What would you like to do?</h2>
+    <nav class="btn-row">
+      <a class="btn" href="card.html">View Card Details</a>
+      <a class="btn" href="payment.html">Process Payment</a>
+      <a class="btn" href="transaction.html">Transaction History</a>
+      <button type="button" class="btn btn-danger js-logout">Logout</button>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

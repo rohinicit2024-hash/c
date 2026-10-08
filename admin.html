@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Credit Card Processing System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="guarded" data-page="admin">
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">CC</span> Credit Card Processing System - Admin</div>
+    <div class="topbar-right">
+      <span class="topbar-user">Administrator: <strong id="adminName"></strong></span>
+      <button type="button" class="btn btn-light btn-small js-admin-logout">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p>Overview of customers and transactions. Updates automatically.</p>
+      </div>
+    </div>
+
+    <section class="grid grid-4">
+      <div class="stat hero">
+        <div class="label">Registered customers</div>
+        <div class="value" id="statCustomers">0</div>
+      </div>
+      <div class="stat">
+        <div class="label">Currently logged in</div>
+        <div class="value" id="statOnline">0</div>
+      </div>
+      <div class="stat">
+        <div class="label">Total transactions</div>
+        <div class="value" id="statTxns">0</div>
+      </div>
+      <div class="stat">
+        <div class="label">Total amount processed</div>
+        <div class="value" id="statAmount">-</div>
+      </div>
+    </section>
+
+    <h2 class="section-title">Customer Information</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Card</th>
+            <th>Card Status</th>
+            <th class="num">Credit Limit</th>
+            <th class="num">Spent</th>
+            <th class="num">Available</th>
+            <th>Online</th>
+          </tr>
+        </thead>
+        <tbody id="customerBody"></tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">Transaction Information</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Customer</th>
+            <th class="num">Amount</th>
+            <th>Date and Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="transactionBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

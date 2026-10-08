@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Login - Credit Card Processing System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body" data-page="admin-login">
+
+  <main class="auth-card">
+    <span class="brand-mark">CC</span>
+    <h1>Administrator Login</h1>
+    <p class="subtitle">Credit Card Processing System</p>
+
+    <div id="adminMsg" class="alert hidden" role="alert"></div>
+
+    <!-- Shown the very first time, when no administrator exists yet -->
+    <section id="adminSetup" class="hidden">
+      <div class="alert alert-info">
+        No administrator account exists yet. Create one now. Choose your own username and password.
+      </div>
+      <form id="adminSetupForm" novalidate>
+        <div class="field">
+          <label for="setupUsername">Admin username</label>
+          <input type="text" id="setupUsername" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="setupPassword">Admin password</label>
+          <input type="password" id="setupPassword" autocomplete="new-password" required>
+          <div class="hint">At least 8 characters</div>
+        </div>
+        <div class="field">
+          <label for="setupConfirm">Confirm password</label>
+          <input type="password" id="setupConfirm" autocomplete="new-password" required>
+        </div>
+        <button type="submit" class="btn btn-block">Create administrator</button>
+      </form>
+    </section>
+
+    <!-- Normal admin login -->
+    <section id="adminLogin" class="hidden">
+      <form id="adminLoginForm" novalidate>
+        <div class="field">
+          <label for="adminUsername">Admin username</label>
+          <input type="text" id="adminUsername" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="adminPassword">Admin password</label>
+          <input type="password" id="adminPassword" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-block">Login</button>
+      </form>
+    </section>
+
+    <hr>
+    <p class="center small"><a href="index.html">Back to customer login</a></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

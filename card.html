@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Details - Credit Card Processing System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="guarded" data-page="card">
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">CC</span> Credit Card Processing System</div>
+    <div class="topbar-right">
+      <span class="topbar-user">Signed in as <strong class="js-customer-name"></strong></span>
+      <button type="button" class="btn btn-light btn-small js-logout">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Card Details</h1>
+        <p>The card registered to your account.</p>
+      </div>
+      <a class="btn btn-outline" href="dashboard.html">Back to Dashboard</a>
+    </div>
+
+    <section class="card-layout">
+      <!-- Picture of the card -->
+      <div class="credit-card" aria-label="Your card">
+        <div class="cc-top">
+          <span class="cc-chip"></span>
+          <span class="cc-type" id="ccType"></span>
+        </div>
+        <div class="cc-number" id="ccNumber"></div>
+        <div class="cc-bottom">
+          <div>
+            <span class="cc-label">Card holder</span>
+            <span class="cc-value js-customer-name"></span>
+          </div>
+          <div>
+            <span class="cc-label">Expires</span>
+            <span class="cc-value" id="ccExpiry"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Details list -->
+      <div class="panel-box">
+        <dl class="detail-list">
+          <div><dt>Card holder</dt><dd class="js-customer-name"></dd></div>
+          <div><dt>Card type</dt><dd id="detType"></dd></div>
+          <div><dt>Card number</dt><dd id="detNumber"></dd></div>
+          <div><dt>Expiry date</dt><dd id="detExpiry"></dd></div>
+          <div><dt>Card status</dt><dd><span id="detStatus" class="badge"></span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <nav class="btn-row" style="margin-top:20px">
+      <a class="btn" href="payment.html">Process Payment</a>
+      <a class="btn btn-outline" href="transaction.html">Transaction History</a>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

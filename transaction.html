@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction History - Credit Card Processing System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="guarded" data-page="transaction">
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">CC</span> Credit Card Processing System</div>
+    <div class="topbar-right">
+      <span class="topbar-user">Signed in as <strong class="js-customer-name"></strong></span>
+      <button type="button" class="btn btn-light btn-small js-logout">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Transaction History</h1>
+        <p id="txnCount">Your successful payments, newest first.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="payment.html">Process Payment</a>
+        <a class="btn btn-outline" href="dashboard.html">Back to Dashboard</a>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th class="num">Amount</th>
+            <th>Date and Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="txnBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
